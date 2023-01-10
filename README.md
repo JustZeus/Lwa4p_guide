@@ -300,4 +300,4 @@ rosrun schunk_lwa4p test.py
 
 - Documentation of the class for the python moveit script [Python moveit_commander move_group.MoveGroupCommander](http://docs.ros.org/en/indigo/api/moveit_commander/html/classmoveit__commander_1_1move__group_1_1MoveGroupCommander.html)
 
-- Used ROS Package [SCHUNK Robots ROS Package](http://docs.ros.org/en/indigo/api/moveit_commander/html/classmoveit__commander_1_1move__group_1_1MoveGroupCommander.html)
+- ROS Package for the Robot [SCHUNK Robots ROS Package](http://wiki.ros.org/schunk_robots)
