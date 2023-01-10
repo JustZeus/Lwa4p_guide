@@ -273,11 +273,17 @@ roslaunch lwa4p_movit_config demo.launch
 
 ### COB Dashboard
 
+The COB Dahsboard can be configured modifying the .yaml files int the `catkin_ws/src/schunk_robots/schunk_lwa4p/config` 
+
+- `joint_configurations.yaml`
+- `command_gui_buttons.yaml`
+
 - Launch the `cob dashboard` and use it to control the robot arm:
 
 ```bash
 roslaunch schunk_lwa4p dashboard.launch
 ```
+![Cob commander ](./img/cob_command.png "COB Commander")
 
 ### Python MoveIt commander interface
 
