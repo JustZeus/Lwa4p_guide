@@ -70,12 +70,12 @@ _This software is for demonstration purposes only!_
 
 The next section contains information from Ammar Najjar repo.
 
-## Choosing CAN Card/Driver
+### Choosing CAN Card/Driver
 
 As lwa4p robot arm uses CAN-bus communication protocol, a CAN card is needed to connect to the arm.
-In another [project](http://www.cs.rpi.edu/foswiki/bin/view/RoboticsWeb/PowerballSchunk), Bryant Pong used Peak pcan card from [Peak](http://www.peak-system.com/) which is not available to me, and according to sockercan interface [wiki-page](http://wiki.ros.org/socketcan_interface#Tested_Drivers_and_Devices) I could also use the [esd](https://esd.eu/en) CAN cards with the Kernel driver, and that is what I used.
+In another [project](http://www.cs.rpi.edu/foswiki/bin/view/RoboticsWeb/PowerballSchunk), Bryant Pong used Peak pcan card from [Peak](http://www.peak-system.com/), and according to sockercan interface [wiki-page](http://wiki.ros.org/socketcan_interface#Tested_Drivers_and_Devices) It could also be used the [esd](https://esd.eu/en) CAN cards with the Kernel driver.
 
-## Choosing Software Version
+### Choosing Software Version
 
 The next OS and ROS versions were selected according to the last update available of the SCHUNK Robots ROS package.
 
@@ -84,9 +84,9 @@ The next OS and ROS versions were selected according to the last update availabl
 - Socketcan (ESD CAN card , sja1000 kernel driver)
 - [Bash](https://www.gnu.org/software/bash/) shell.
 
-## Installing ROS Packages
+### Installing ROS Packages
 
-To install [ROS](http://www.ros.org/), I followed the instructions for the installation mentioned in the [wiki-page](http://wiki.ros.org/action/fullsearch/indigo/Installation/Ubuntu).
+To install [ROS](http://www.ros.org/), follow the instructions for the installation mentioned in the [wiki-page](http://wiki.ros.org/action/fullsearch/indigo/Installation/Ubuntu).
 
 - As an administrator or a sudo user, add ROS repositories to the sourcelist and import the appropriate key:
 
@@ -123,7 +123,7 @@ sudo apt-get install -y git ros-indigo-libntcan ros-indigo-libpcan       \
         python-wstool
 ```
 
-## rosdep Initialization
+### rosdep Initialization
 
 `rosdep` enables you to easily install system dependencies for source you want to compile and is required to run some core components in ROS.  
 To initialize it:
@@ -135,7 +135,7 @@ rosdep update --include-eol-distros
 
 Note that the second command should be run as a normal user.
 
-## Environment Setup
+### Environment Setup
 
 In order to run any ROS command, ROS environment variables should be available, and this can be done by sourcing specific files:
 
@@ -146,7 +146,7 @@ source ~/.bashrc
 
 Be careful to have that setup file sourced on every terminal you use for ROS, and if you are using [screen](https://www.gnu.org/software/screen/) or [tmux](https://tmux.github.io/), make sure that in every pane you open, every setup file is sourced, else you might get un-expected errors.
 
-## Catkin Workspace
+### Catkin Workspace
 
 - Create a directory for catkin workspace. Usually I just call it `catkin_ws` and place it in my home directory:
 
@@ -178,7 +178,7 @@ echo "source $HOME/catkin_ws/devel/setup.bash" >> $HOME/.bashrc
 source $HOME/catkin_ws/devel/setup.bash
 ```
 
-## CAN Interface
+### CAN Interface
 
 Setting up the CAN interface correctly came after some research in [ros/socket_interface](http://wiki.ros.org/socketcan_interface)
 Connect the robot arm to `can0` so the steps can be summarized in the following:
@@ -199,7 +199,7 @@ sudo ifconfig can0 txqueuelen 20
 
 Notice that `schunk_robots` package uses `can0` by default, so if you use a different interface such as `can1` or `can2`, make sure to modify the configuration file `lwa4p.yml` in your `schunk_robots` package to make it use the matching CAN interface.
 
-## Moveit
+### Moveit
 
 To use [moveit](http://moveit.ros.org/), I followed the steps mentioned in the [docs](http://moveit.ros.org/install/).
 I chose the catkin workspace to be in my home directory:
@@ -236,9 +236,9 @@ git clone https://github.com/ammarnajjar/lwa4p_moveit_config.git
 
 Then re-build again to be able to use it.
 
-## Initializing the Robot Arm
+### Initializing the Robot Arm
 
-To initialize the robot arm, I launch the controller first
+To initialize the robot arm, first launch the controller
 
 ```bash
 roslaunch schunk_lwa4p robot.launch
@@ -294,3 +294,10 @@ rosrun schunk_lwa4p test.py
 
 ![Terminal 1](./img/terminal2.png "terminal 1")
 ![Terminal 2](./img/terminal3.png "terminal 2")
+
+
+## Useful links 
+
+- Documentation of the class for the python moveit script [Python moveit_commander move_group.MoveGroupCommander](http://docs.ros.org/en/indigo/api/moveit_commander/html/classmoveit__commander_1_1move__group_1_1MoveGroupCommander.html)
+
+- Used ROS Package [SCHUNK Robots ROS Package](http://docs.ros.org/en/indigo/api/moveit_commander/html/classmoveit__commander_1_1move__group_1_1MoveGroupCommander.html)
