@@ -304,10 +304,45 @@ rosrun schunk_lwa4p test.py
 
 
 ## Link/Joint 3D Files
-
-![Terminal 1](./img/Joint_example.png "terminal 1")
-
 For the dimensions configuration and approximation of the Robot Arm in real space, this repository contains the Robot's Arm .stl 3D mesh files for the joints/links in the `3D files` folder.
+
+![Joint Example](./img/Joint_example.png "Joint Example")
+
+
+
+
+## Gazebo Schunk lwa4p ROS Robot simulator
+Gazebo offers a simulation environment to check Robot's movements before the real life implementation, helping the user to avoid colisions and errors.
+
+The Héctor´s Azpúrua ROS Package for the Robot [Gazebo ROS Package](https://github.com/h3ct0r/schunk_lwa4p_gazebo_sim) repository is recomended, as with other ROS packages, is needed to building from source the package before installing.+
+
+
+![Terminal 1](./img/Gazebo_simulation.png "terminal 1")
+
+
+
+### Install  dependecies
+
+
+```{r, engine='bash', count_lines}
+$ cd ~/catkin_ws/src/
+$ git clone https://github.com/h3ct0r/schunk_lwa4p_gazebo_sim
+$ cd ~/catkin_ws
+$ rosdep install --from-paths src -i -y
+$ catkin_make
+```
+
+### Run Gazebo
+Open the terminal and type:
+```{r, engine='bash', count_lines}
+$ roslaunch schunk_lwa4p_moveit sim_gazebo.launch
+```
+
+### Run Moveit!
+Open the terminal and type:
+```{r, engine='bash', count_lines}
+$ roslaunch schunk_lwa4p_moveit demo.launch
+```
 
 
 ## Useful links 
