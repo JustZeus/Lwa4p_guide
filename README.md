@@ -303,6 +303,13 @@ rosrun schunk_lwa4p test.py
 ![Terminal 2](./img/terminal3.png "terminal 2")
 
 
+## Link/Joint 3D Files
+
+![Terminal 1](./img/Joint_example.png "terminal 1")
+
+For the dimensions configuration and approximation of the Robot Arm in real space, this repository contains the Robot's Arm .stl 3D mesh files for the joints/links in the `3D files` folder.
+
+
 ## Useful links 
 
 - Documentation of the class for the python moveit script [Python moveit_commander move_group.MoveGroupCommander](http://docs.ros.org/en/indigo/api/moveit_commander/html/classmoveit__commander_1_1move__group_1_1MoveGroupCommander.html)
